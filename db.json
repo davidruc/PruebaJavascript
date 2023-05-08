@@ -1,0 +1,60 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "David Rueda",
+      "edad": "22",
+      "teléfono": "3185767863",
+      "email": "davidarueda18@gmail.com",
+      "dirección": "cra22 #65-31",
+      "fechaDeNacimiento": "2023-05-17",
+      "documento": "1005199687",
+      "fechaIngreso": "2023-03-08",
+      "id_team": "1"
+    },
+    {
+      "id": "2",
+      "nombre": "Pepito Rueda",
+      "edad": "17",
+      "teléfono": "3425324324",
+      "email": "petoss@gmail.com",
+      "dirección": "diagonal1 #65-31",
+      "fechaDeNacimiento": "2023-05-17",
+      "documento": "2321321321321",
+      "fechaIngreso": "2023-02-08",
+      "id_team": "1"
+    },
+    {
+      "id": "3",
+      "nombre": "Jose",
+      "edad": "30",
+      "teléfono": "24432543534",
+      "email": "dfdsfdsfd@fdgrfgfdg.com",
+      "dirección": "2132321321",
+      "fechaDeNacimiento": "1990-05-23",
+      "documento": "100519924342",
+      "fechaIngreso": "2023-04-24",
+      "id_team": "2"
+    }
+  ],
+  " ": [
+    {
+      "id": "1",
+      "nombre": "sputnik",
+      "Trainer_Asociado": "Miguel",
+      "teamId": "1"
+    },
+    {
+      "id": "2",
+      "nombre": "sputnik2",
+      "Trainer_Asociado": "Miguel",
+      "teamId": "1"
+    },
+    {
+      "id": "2",
+      "nombre": "apolo",
+      "Trainer_Asociado": "vermer",
+      "teamId": "2"
+    }
+  ]
+}

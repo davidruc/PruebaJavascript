@@ -1,0 +1,9 @@
+body{
+    background-image: url(./img/fondo.jpeg);
+}
+#contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
