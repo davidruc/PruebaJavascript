@@ -17,3 +17,35 @@ export const DELETE_TEAM = "delteTeam"
 export const PUT_TEAM = "putTeam"
 
 export const SEARCH_TEAM = "searchTeam"
+
+
+export const GET_SKILL_ALL = "getskillAll"
+
+export const POST_SKILL = "postskill"
+
+export const DELETE_SKILL = "delteskill"
+
+export const PUT_SKILL = "putskill"
+
+export const SEARCH_SKILL = "searchskill"
+
+
+export const GET_MODULO_ALL = "getmoduloAll"
+
+export const POST_MODULO = "postmodulo"
+
+export const DELETE_MODULO = "deltemodulo"
+
+export const PUT_MODULO = "putmodulo"
+
+export const SEARCH_MODULO = "searchmodulo"
+
+export const GET_EVALUACION_ALL = "getevaluacionAll"
+
+export const POST_EVALUACION = "postevaluacion"
+
+export const DELETE_EVALUACION = "delteevaluacion"
+
+export const PUT_EVALUACION = "putevaluacion"
+
+export const SEARCH_EVALUACION = "searchevaluacion"

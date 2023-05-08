@@ -19,7 +19,8 @@ const postTeamUsuario = async (arg) => {
         headers: headers,
         body: JSON.stringify(arg)
     }
-    return await (await fetch(`http://localhost:${puerto}/usuarios/${arg.id}?_expand=Teams`, config))
+    /* intenté de 10000 formas como enlazar los datos y no pude http://localhost:4009/usuarios?_embed=teams */
+    return await (await fetch(`http://localhost:${puerto}/usuarios/${arg.id_team}?_expand=Teams`, config))
 }
 
 

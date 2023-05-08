@@ -1,22 +1,22 @@
 import config from "../config/config.js";
 import {
-    GET_TEAM_ALL,
-    POST_TEAM,
-    DELETE_TEAM,
-    PUT_TEAM,
-    SEARCH_TEAM,
+    GET_EVALUACION_ALL,
+    POST_EVALUACION,
+    DELETE_EVALUACION,
+    PUT_EVALUACION,
+    SEARCH_EVALUACION,
   } from "../constants/requestTypes.js";
   
 
-  export default class myTeamTable extends HTMLElement {
+  export default class myevaluacionTable extends HTMLElement {
     static url = import.meta.url;
   
   
     static async components() {
-      return await (await fetch(config.uri(myTeamTable.url))).text();
+      return await (await fetch(config.uri(myevaluacionTable.url))).text();
     }
     constructor() {
-      console.log("constructor running");
+      console.log("constructor running 2");
   
       super();
       this.attachShadow({
@@ -46,7 +46,7 @@ import {
       e.type === "submit" ? this.myworker(e) : undefined;
     }
     myworker(e) {
-      let ws = new Worker("../config/wsTeam.js", {
+      let ws = new Worker("../config/wsevaluacion.js", {
         type: "module",
       });
       let data = Object.fromEntries(new FormData(e.target));
@@ -54,24 +54,24 @@ import {
   
       if (valor === "get") {
         ws.postMessage({
-          type: GET_TEAM_ALL,
+          type: GET_EVALUACION_ALL,
         });
       } else if (valor === "post") {
         
   
         ws.postMessage({
-          type: POST_TEAM,
+          type: POST_EVALUACION,
           arg: data,
         
         });
       } else if (valor === "delete") {
         ws.postMessage({
-          type: DELETE_TEAM,
+          type: DELETE_EVALUACION,
           arg: data,
         });
       } else if (valor === "put") {
         ws.postMessage({
-          type: PUT_TEAM,
+          type: PUT_EVALUACION,
           arg: data,
         });
       }
@@ -96,12 +96,12 @@ import {
         const sortedData = data.sort((a, b) => a.id - b.id);
         console.log(data);
         let plantilla = "";
-        sortedData.forEach((team) => {
+        sortedData.forEach((val) => {
           plantilla += `
               <tr>
-                  <th>${team.id}</th>
-                  <th>${team.nombre}</th>
-                  <th>${team.Trainer_Asociado}</th>
+                  <th>${val.id}</th>
+                  <th>${val.id_modulo}</th>
+                  <th>${val.nota}</th>
               </tr> 
                   
           `;
@@ -115,12 +115,12 @@ import {
     static get observedAttributes() {
       return ["data-accion"];
     }
-/*     attributeChangedCallback(name, old, now) {
+    attributeChangedCallback(name, old, now) {
       console.log(name, old, now);
       console.log(this.dataset.accion);
-    } */
+    }
     connectedCallback() {
-      Promise.resolve(myTeamTable.components()).then((html) => {
+      Promise.resolve(myevaluacionTable.components()).then((html) => {
         this.shadowRoot.innerHTML = html;
         this.form = this.shadowRoot.querySelector("#myFormData");
         this.form.addEventListener("submit", this.handleEvent.bind(this));
@@ -128,4 +128,4 @@ import {
     }
    
   }
-  customElements.define(config.name(myTeamTable.url), myTeamTable);
+  customElements.define(config.name(myevaluacionTable.url), myevaluacionTable);

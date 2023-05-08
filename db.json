@@ -7,8 +7,8 @@
       "teléfono": "3185767863",
       "email": "davidarueda18@gmail.com",
       "dirección": "cra22 #65-31",
-      "fechaDeNacimiento": "2023-05-17",
-      "documento": "1005199687",
+      "fechaDeNacimiento": "2023-05-08",
+      "documento": "32321312",
       "fechaIngreso": "2023-03-08",
       "id_team": "1"
     },
@@ -35,26 +35,50 @@
       "documento": "100519924342",
       "fechaIngreso": "2023-04-24",
       "id_team": "2"
+    },
+    {
+      "id": "4",
+      "nombre": "Leyla",
+      "edad": "16",
+      "teléfono": "32343242",
+      "email": "dsadsad@gmal.com",
+      "dirección": "w223 # 32",
+      "fechaDeNacimiento": "2022-04-19",
+      "documento": "3213212321",
+      "fechaIngreso": "2023-03-02",
+      "id_team": "2"
     }
   ],
-  " ": [
+  "teams": [
     {
       "id": "1",
-      "nombre": "sputnik",
-      "Trainer_Asociado": "Miguel",
-      "teamId": "1"
+      "nombre": "artemis",
+      "Trainer_Asociado": "vermer"
     },
     {
-      "id": "2",
-      "nombre": "sputnik2",
-      "Trainer_Asociado": "Miguel",
-      "teamId": "1"
-    },
-    {
-      "id": "2",
+      "id": "3",
       "nombre": "apolo",
-      "Trainer_Asociado": "vermer",
-      "teamId": "2"
+      "Trainer_Asociado": "joiver",
+      "id_team": "sin ID"
+    }
+  ],
+  "skill": [
+    {
+      "id": "2",
+      "nombre": "Javascript"
+    }
+  ],
+  "modulo": [
+    {
+      "id": "1",
+      "nombre": "funciones"
+    }
+  ],
+  "evaluacion": [
+    {
+      "id": "1",
+      "id_modulo": "1",
+      "nota": "5"
     }
   ]
 }

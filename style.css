@@ -7,3 +7,16 @@ body{
     justify-content: center;
     align-items: center;
 }
+.imagen{
+    position: fixed;
+    width: 10%;
+    border-radius: 50%;
+    margin: 2%;
+    box-shadow: .8vh .8vh 1vh rgba(248, 252, 0, 0.507);
+}
+h1{
+    color:bisque;
+    font-size: 4rem;
+    
+    margin: 0;
+}
