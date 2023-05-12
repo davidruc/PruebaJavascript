@@ -114,10 +114,7 @@ import {
     static get observedAttributes() {
       return ["data-accion"];
     }
-    attributeChangedCallback(name, old, now) {
-      console.log(name, old, now);
-      console.log(this.dataset.accion);
-    }
+   
     connectedCallback() {
       Promise.resolve(mymoduloTable.components()).then((html) => {
         this.shadowRoot.innerHTML = html;

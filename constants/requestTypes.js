@@ -49,3 +49,5 @@ export const DELETE_EVALUACION = "delteevaluacion"
 export const PUT_EVALUACION = "putevaluacion"
 
 export const SEARCH_EVALUACION = "searchevaluacion"
+
+export const POST_TEAM_USUARIO = "postTeamUsuario"
