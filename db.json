@@ -52,6 +52,11 @@
       "id": "3",
       "nombre": "sputnik",
       "Trainer_Asociado": "miguel"
+    },
+    {
+      "id": "4",
+      "nombre": "Belgathuse",
+      "Trainer_Asociado": "Brian"
     }
   ],
   "skill": [

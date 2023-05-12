@@ -84,17 +84,7 @@ import {
       }
   
       ws.addEventListener("message", (e) => {
-        this.displayDataInTable(e.data).then(this.tableForTeams(e.data));
-        let ojito = document.querySelector("my-team");
-        let shadowOjito = ojito.shadowRoot;
-        
-        let plantilla = `<div><h1></h1></div>`
-
-        let ojito2 = document.querySelector("my-filter");
-        let shadowOjito2 = ojito2.shadowRoot;
-        shadowOjito2.querySelector("#consultas").innerHTML = plantilla
-        console.log(shadowOjito2);
-
+        this.displayDataInTable(e.data);
         ws.terminate();
       });
   
@@ -107,30 +97,21 @@ import {
         await this.content();
         const tableBody = this.shadowRoot.querySelector("#myData");
         const newBtn = this.shadowRoot.querySelector(".otherbtns")
-       
         const sortedData = data.sort((a, b) => a.id - b.id);
         let plantilla = "";
-        let plantilla2 = ""
-        sortedData.forEach((team) => {
+        
+        sortedData.map((team) => {
           
-          plantilla = `
+          plantilla +=`
               <tr>
                   <th>${team.id}</th>
                   <th>${team.nombre}</th>
                   <th>${team.Trainer_Asociado}</th>
               </tr> 
           `;
-          if(botonesLocos.length <= 2){
-            plantilla2 = new DOMParser().parseFromString( `<input id="especiales${team.id}" type="submit" class="especiales${team.id}" data-valor="get2" value="${team.nombre}">`, "text/html");
-            newBtn.append(...plantilla2.body.children);
-            const espBtn = this.shadowRoot.querySelector(`#especiales${team.id}`);
-            console.log(espBtn);
-            botonesLocos.push(espBtn)
-            console.log(botonesLocos);
-
-          };
+          let plantilla2 = new DOMParser().parseFromString( `<input id="especiales${team.id}" type="submit" class="especiales${team.id}" data-valor="get2" value="${team.nombre}">`, "text/html");
+          newBtn.append(...plantilla2.body.children); 
         });   
-        
         
         tableBody.innerHTML = plantilla;
       } catch (error) {
@@ -138,22 +119,7 @@ import {
       }
     }
     
-    async tableForTeams(data){
-      try {
-        await this.content();
-        botonesLocos.map(val =>{
-           val.addEventListener("click", (e)=>{
-            data.forEach(elem => {
-              
-
-            });
-          })
-        })
-      }
-      catch (error){
-        console.log(error);
-      }
-    }
+  
     static get observedAttributes() {
       return ["data-accion"];
     }
@@ -166,10 +132,7 @@ import {
         this.shadowRoot.innerHTML = html;
         this.form = this.shadowRoot.querySelector("#myFormData");
         this.form.addEventListener("submit", this.handleEvent.bind(this));
-        console.log(document);
-
       });
     }
-   
   }
   customElements.define(config.name(myTeamTable.url), myTeamTable);

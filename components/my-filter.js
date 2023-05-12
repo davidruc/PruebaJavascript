@@ -47,13 +47,40 @@ export default class myfilterTeam extends HTMLElement {
     async fun(data){ 
         try{
             console.log(data);
+            let delDiv = this.shadowRoot.querySelector("#consultas");
             let botones = document.querySelector("my-team");
             let botonesShadow = botones.shadowRoot;
             botonesShadow.addEventListener("click", (e)=>{
-                if(e.target.classList.contains("especiales1")){
-                    
-                }
-            })
+
+                let plantilla = "";
+                data.map(val => {
+                    if(e.target.classList.contains(`especiales${val.team.id}`)){
+                        console.log(e.target.classList.contains(`especiales${val.id}`));
+                        plantilla += `
+                        <table id="myTable">
+                        <thead>
+                            <tr>
+                                <th>${val.team.id}</th>
+                                <th>${val.team.nombre}</th>
+                                <th>${val.team.Trainer_Asociado}</th>
+                            
+                            </tr>
+                        </thead>
+
+                        <tbody id="myData">
+                            <tr>
+                                <td>${val.id}</td>
+                                <td>${val.nombre}</td>
+                                
+                            </tr>
+                        </tbody>
+                        </table>
+                        `;
+                    } 
+                })
+                
+                delDiv.innerHTML = plantilla;
+                })
             
 
         } catch (error) {
