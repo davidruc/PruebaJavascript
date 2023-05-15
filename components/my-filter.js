@@ -13,24 +13,7 @@ export default class myfilterTeam extends HTMLElement {
         this.attachShadow({ mode: "open" });
     }
 
-    _shadowRoot = () => {
-        let asyncContent = null;
-        let content = null;
-        return async (html) => {
-          if (content) return content;
-          if (!asyncContent) {
-            asyncContent = html;
-            return null;
-          }
-          content = await asyncContent;
-          return content;
-        };
-      };
-
-      content = this._shadowRoot();
-
       handleEvent(e){
-0.
         this.myWorker(e);
         // e.type === "submit" ? this.myWorker(e) : undefined;
       }
@@ -46,40 +29,39 @@ export default class myfilterTeam extends HTMLElement {
     
     async fun(data){ 
         try{
-            console.log(data);
-            let delDiv = this.shadowRoot.querySelector("#consultas");
+            let thead = this.shadowRoot.querySelector("#thead");
+            let tbody = this.shadowRoot.querySelector("#myData");
             let botones = document.querySelector("my-team");
             let botonesShadow = botones.shadowRoot;
-            botonesShadow.addEventListener("click", (e)=>{
 
+            botonesShadow.addEventListener("click", (e)=>{
                 let plantilla = "";
+                let plantillabody = "";
                 data.map(val => {
                     if(e.target.classList.contains(`especiales${val.team.id}`)){
-                        console.log(e.target.classList.contains(`especiales${val.id}`));
-                        plantilla += `
-                        <table id="myTable">
-                        <thead>
-                            <tr>
-                                <th>${val.team.id}</th>
-                                <th>${val.team.nombre}</th>
-                                <th>${val.team.Trainer_Asociado}</th>
-                            
-                            </tr>
-                        </thead>
-
-                        <tbody id="myData">
-                            <tr>
-                                <td>${val.id}</td>
-                                <td>${val.nombre}</td>
-                                
-                            </tr>
-                        </tbody>
-                        </table>
+                        plantilla = `
+                        
+                        <tr>
+                        <th>TeamId: ${val.team.id}</th>
+                        <th>TEAM: ${val.team.nombre}</th>
+                        <th>Trainer: ${val.team.Trainer_Asociado}</th>
+                        
+                        </tr>
+                        
                         `;
+                        plantillabody += `
+                            <tr>
+                                <td>id: ${val.id}</td>
+                                <td>${val.nombre}</td>
+                                <td>edad: ${val.edad}</td>
+                            </tr>
+                        
+                        `
                     } 
                 })
                 
-                delDiv.innerHTML = plantilla;
+                thead.innerHTML = plantilla;
+                tbody.innerHTML = plantillabody
                 })
             
 

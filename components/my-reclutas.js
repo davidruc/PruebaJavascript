@@ -18,8 +18,6 @@ export default class myTabla extends HTMLElement {
     return await (await fetch(config.uri(myTabla.url))).text();
   }
   constructor() {
-    console.log("constructor running");
-
     super();
     this.attachShadow({
       mode: "open",
@@ -111,14 +109,12 @@ export default class myTabla extends HTMLElement {
     try {
       await this.content();
       const tableBody = this.shadowRoot.querySelector("#myData");
-      console.log("display: ", this.shadowRoot);
       if (!Array.isArray(data)) {
         throw new Error(
           "Datos inválidos proporcionados. Se esperaba un array."
         );
       }
       const sortedData = data.sort((a, b) => a.id - b.id);
-      console.log(data);
       let plantilla = "";
       
       sortedData.forEach((user) => {
@@ -169,7 +165,7 @@ export default class myTabla extends HTMLElement {
       let plantilla = "";
       
       sortedData.forEach((user) => { 
-         if (user.edad <= 18){
+         if (user.edad <= 17){
           plantilla += `
               <tr>
                   <th>${user.id}</th>
@@ -197,21 +193,18 @@ export default class myTabla extends HTMLElement {
     try {
       await this.content();
       const tableBody = this.shadowRoot.querySelector("#myData");
-      console.log("display: ", this.shadowRoot);
       if (!Array.isArray(data)) {
         throw new Error(
           "Datos inválidos proporcionados. Se esperaba un array."
         );
       }
       const sortedData = data.sort((a, b) => a.id - b.id);
-      console.log(data);
       let plantilla = "";
       
       sortedData.forEach((user) => {
         
         const fecha = new Date('2023/3/8');
         const comprobante = fecha.toLocaleDateString();
-        console.log(comprobante);
 
           plantilla += `
               <tr>

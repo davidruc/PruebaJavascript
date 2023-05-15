@@ -17,7 +17,6 @@ import {
       return await (await fetch(config.uri(myTeamTable.url))).text();
     }
     constructor() {
-      console.log("constructor running");
       super();
       this.attachShadow({
         mode: "open",

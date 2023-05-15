@@ -35,6 +35,30 @@
       "documento": "3213212321",
       "fechaIngreso": "2023-03-02",
       "teamId": "2"
+    },
+    {
+      "id": "5",
+      "nombre": "Robert",
+      "edad": "22",
+      "teléfono": "3185323213",
+      "email": "robert@gmail.com",
+      "dirección": "cra2434",
+      "fechaDeNacimiento": "2022-01-20",
+      "documento": "343243242",
+      "fechaIngreso": "2023-03-04",
+      "teamId": "2"
+    },
+    {
+      "id": "6",
+      "nombre": "Fabio",
+      "edad": "50",
+      "teléfono": "3134324324",
+      "email": "fabio@io.com",
+      "dirección": "diagonal 234",
+      "fechaDeNacimiento": "1960-02-04",
+      "documento": "34324324",
+      "fechaIngreso": "2023-01-10",
+      "teamId": "4"
     }
   ],
   "teams": [

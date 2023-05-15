@@ -16,8 +16,6 @@ import {
       return await (await fetch(config.uri(myevaluacionTable.url))).text();
     }
     constructor() {
-      console.log("constructor running 2");
-  
       super();
       this.attachShadow({
         mode: "open",
@@ -25,7 +23,7 @@ import {
       
     }
   
-    _shadowRoot = () => {
+     _shadowRoot = () => {
       let asyncContent = null;
       let content = null;
       return async (html) => {

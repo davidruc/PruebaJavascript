@@ -16,8 +16,6 @@ import {
       return await (await fetch(config.uri(mymoduloTable.url))).text();
     }
     constructor() {
-      console.log("constructor running 2");
-  
       super();
       this.attachShadow({
         mode: "open",
