@@ -95,9 +95,10 @@ import {
         console.log(data);
         let plantilla = "";
         sortedData.forEach((val) => {
+          console.log(val);
           plantilla += `
               <tr>
-                  <th>${val.id}</th>
+                  <th>${val.skillId}</th>
                   <th>${val.nombre}</th>
               </tr> 
                   

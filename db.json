@@ -59,6 +59,30 @@
       "documento": "34324324",
       "fechaIngreso": "2023-01-10",
       "teamId": "4"
+    },
+    {
+      "id": "151",
+      "nombre": "Konny Liseth Alucema",
+      "edad": "17",
+      "teléfono": "32546454854",
+      "email": "konny123@gmail.com",
+      "dirección": "la cumbre",
+      "fechaDeNacimiento": "2005-08-08",
+      "documento": "13254541212",
+      "fechaIngreso": "2023-02-01",
+      "teamId": "2"
+    },
+    {
+      "id": "53",
+      "nombre": "Marshall",
+      "edad": "20",
+      "teléfono": "5156165",
+      "email": "marshargatitamiau@gmail.com",
+      "dirección": "comuneros",
+      "fechaDeNacimiento": "2002-08-12",
+      "documento": "1541516156",
+      "fechaIngreso": "2023-01-23",
+      "teamId": "5"
     }
   ],
   "teams": [
@@ -81,18 +105,56 @@
       "id": "4",
       "nombre": "Belgathuse",
       "Trainer_Asociado": "Brian"
+    },
+    {
+      "id": "5",
+      "nombre": "NOSEASAPOCONNMAYUSCULA",
+      "Trainer_Asociado": "Fernan Flow"
     }
   ],
   "skill": [
     {
       "id": "2",
       "nombre": "Javascript"
+    },
+    {
+      "id": "1",
+      "nombre": "HTML"
+    },
+    {
+      "id": "3",
+      "nombre": "CSS"
+    },
+    {
+      "id": "4",
+      "nombre": "python"
     }
   ],
   "modulo": [
     {
-      "id": "1",
-      "nombre": "funciones"
+      "skillId": "1",
+      "nombre": "etiquetas",
+      "id": 1684176128823
+    },
+    {
+      "skillId": "1",
+      "nombre": "maquetacion",
+      "id": 1684176188192
+    },
+    {
+      "skillId": "2",
+      "nombre": "funciones",
+      "id": 1684176203264
+    },
+    {
+      "skillId": "2",
+      "nombre": "workers",
+      "id": 1684176211889
+    },
+    {
+      "skillId": "2",
+      "nombre": "web components",
+      "id": 1684176218496
     }
   ],
   "evaluacion": [
