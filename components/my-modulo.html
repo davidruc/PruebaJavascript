@@ -8,7 +8,7 @@
         <input type="submit" data-valor="put" value="actualizar">
         <input type="submit" data-valor="delete" value="eliminar">
     </div>
- 
+    <div class="otherbtns"></div>
 </form><br>
 
 
@@ -17,6 +17,7 @@
 <table id="myTable">
     <thead>
         <tr>
+            <th>Id modulo</th>
             <th>Id skill</th>
             <th>Nombre</th>
         </tr>
@@ -57,6 +58,16 @@
         width: 100%;
         padding: 2%;
         margin: 1%;
+    }
+    .otherbtns{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .otherbtns input{
+        width: 110%;
+        padding: 2%;
+        margin: .9%;
     }
     .butons{
         display: flex;

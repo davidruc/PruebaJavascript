@@ -5,6 +5,8 @@ import {
     DELETE_EVALUACION,
     PUT_EVALUACION,
     SEARCH_EVALUACION,
+   
+
   } from "../constants/requestTypes.js";
   
 
@@ -54,9 +56,8 @@ import {
         ws.postMessage({
           type: GET_EVALUACION_ALL,
         });
-      } else if (valor === "post") {
-        
-  
+      }
+      else if (valor === "post") {
         ws.postMessage({
           type: POST_EVALUACION,
           arg: data,
@@ -73,7 +74,7 @@ import {
           arg: data,
         });
       }
-  
+      
       ws.addEventListener("message", (e) => {
         this.displayDataInTable(e.data);
         ws.terminate();
@@ -85,24 +86,26 @@ import {
       try {
         await this.content();
         const tableBody = this.shadowRoot.querySelector("#myData");
-        console.log("display: ", this.shadowRoot);
         if (!Array.isArray(data)) {
           throw new Error(
             "Datos inválidos proporcionados. Se esperaba un array."
           );
         }
         const sortedData = data.sort((a, b) => a.id - b.id);
-        console.log(data);
         let plantilla = "";
+        
         sortedData.forEach((val) => {
+
           plantilla += `
-              <tr>
-                  <th>${val.id}</th>
-                  <th>${val.id_modulo}</th>
-                  <th>${val.nota}</th>
-              </tr> 
-                  
+          <tr>
+          <th>${val.usuarioId}</th>
+          <th>${val.moduloId}</th>
+          <th>${val.nota}</th>
+          </tr> 
+          
           `;
+
+          
         }) 
         tableBody.innerHTML = plantilla;
       } catch (error) {

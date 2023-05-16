@@ -51,3 +51,7 @@ export const PUT_EVALUACION = "putevaluacion"
 export const SEARCH_EVALUACION = "searchevaluacion"
 
 export const POST_TEAM_USUARIO = "postTeamUsuario"
+
+export const GET_MODULOFILTER_ALL = "getModulofilterAll"
+
+export const GET_EVAFILTER_ALL = "getEvafilterAll"

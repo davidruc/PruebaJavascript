@@ -3,13 +3,13 @@ let headers = new Headers({
 });
 let puerto = 4009;
 
-const postTeamUsuario = async () => {
+const getEvafilterAll = async () => {
     let config = {
         method: "GET",
         headers: headers,
     }
-    return await (await fetch(`http://localhost:${puerto}/usuarios?_expand=team`, config)).json()
+    return await (await fetch(`http://localhost:${puerto}/evaluaciones?_expand=modulo`, config)).json()
 }
 export default{
-    postTeamUsuario
+    getEvafilterAll
 }

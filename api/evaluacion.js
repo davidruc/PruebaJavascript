@@ -4,27 +4,27 @@ let headers = new Headers({
 let puerto = 4009;
 
 const postevaluacion = async (arg) => {
-    arg.id = (arg.id) ? arg.id : Date.now();
+    
     let config = {
         method: "POST",
         headers: headers,
         body: JSON.stringify(arg)
     };
-    return await (await fetch(`http://localhost:${puerto}/evaluacion`, config)).json();
+    return await (await fetch(`http://localhost:${puerto}/evaluaciones`, config)).json();
 }
 const getevaluacionAll = async () => {
     let config = {
         method: "GET",
         headers: headers
     };
-    return await (await fetch(`http://localhost:${puerto}/evaluacion`, config)).json();
+    return await (await fetch(`http://localhost:${puerto}/evaluaciones`, config)).json();
 }
 const delteevaluacion = async (arg) => {
     let config = {
         method: "DELETE",
         headers: headers,
     };
-    return await (await fetch(`http://localhost:${puerto}/evaluacion/${arg.id}`, config)).json();
+    return await (await fetch(`http://localhost:${puerto}/evaluaciones/${arg.id}`, config)).json();
 }
 const putevaluacion = async (arg) => {
     let config = {
@@ -32,10 +32,10 @@ const putevaluacion = async (arg) => {
         headers: headers,
         body: JSON.stringify(arg)
     };
-    return await (await fetch(`http://localhost:${puerto}/evaluacion/${arg.id}`, config)).json();
+    return await (await fetch(`http://localhost:${puerto}/evaluaciones/${arg.id}`, config)).json();
 }
 const searchevaluacion = async (arg) => {
-    const response = await fetch(`http://localhost:${puerto}/evaluacion`);
+    const response = await fetch(`http://localhost:${puerto}/evaluaciones`);
     const data = await response.json();
 
     if (response.ok) {
@@ -46,10 +46,13 @@ const searchevaluacion = async (arg) => {
         return [];
     }
 };
+
+
 export default {
     postevaluacion,
     getevaluacionAll,
     delteevaluacion,
     putevaluacion,
-    searchevaluacion
+    searchevaluacion,
+    
 }

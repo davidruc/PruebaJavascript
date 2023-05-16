@@ -112,7 +112,7 @@
       "Trainer_Asociado": "Fernan Flow"
     }
   ],
-  "skill": [
+  "skills": [
     {
       "id": "2",
       "nombre": "Javascript"
@@ -130,38 +130,79 @@
       "nombre": "python"
     }
   ],
-  "modulo": [
+  "modulos": [
     {
+      "id": 1,
       "skillId": "1",
-      "nombre": "etiquetas",
-      "id": 1684176128823
+      "nombre": "etiquetas"
     },
     {
       "skillId": "1",
       "nombre": "maquetacion",
-      "id": 1684176188192
+      "id": 2
     },
     {
       "skillId": "2",
       "nombre": "funciones",
-      "id": 1684176203264
+      "id": 3
     },
     {
       "skillId": "2",
       "nombre": "workers",
-      "id": 1684176211889
+      "id": 4
     },
     {
       "skillId": "2",
       "nombre": "web components",
-      "id": 1684176218496
+      "id": 5
+    },
+    {
+      "skillId": "3",
+      "nombre": "herencia",
+      "id": 6
+    },
+    {
+      "skillId": "4",
+      "nombre": "ciclos",
+      "id": 7
     }
   ],
-  "evaluacion": [
+  "evaluaciones": [
     {
-      "id": "1",
-      "id_modulo": "1",
-      "nota": "5"
+      "usuarioId": "53",
+      "moduloId": "1",
+      "nota": "100",
+      "id": 1
+    },
+    {
+      "usuarioId": "53",
+      "moduloId": "2",
+      "nota": "90",
+      "id": 2
+    },
+    {
+      "usuarioId": "53",
+      "moduloId": "4",
+      "nota": "96",
+      "id": 3
+    },
+    {
+      "usuarioId": "4",
+      "moduloId": "1",
+      "nota": "70",
+      "id": 4
+    },
+    {
+      "usuarioId": "53",
+      "moduloId": "3",
+      "nota": "40",
+      "id": 5
+    },
+    {
+      "usuarioId": "4",
+      "moduloId": "2",
+      "nota": "67",
+      "id": 6
     }
   ]
 }

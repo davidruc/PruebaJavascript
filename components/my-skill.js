@@ -94,15 +94,17 @@ import {
         const sortedData = data.sort((a, b) => a.id - b.id);
         console.log(data);
         let plantilla = "";
+        const newBtn = this.shadowRoot.querySelector(".otherbtns")
         sortedData.forEach((val) => {
           plantilla += `
-              <tr>
-                  <th>${val.id}</th>
-                  <th>${val.nombre}</th>
-                 
-              </tr> 
-                  
+          <tr>
+          <th>${val.id}</th>
+          <th>${val.nombre}</th>
+          </tr> 
+          
           `;
+          let plantilla2 = new DOMParser().parseFromString( `<input id="especiales${val.id}" type="submit" class="especiales${val.id}" data-valor="get2" value="${val.nombre}">`, "text/html");
+          newBtn.append(...plantilla2.body.children); 
         }) 
         tableBody.innerHTML = plantilla;
       } catch (error) {
@@ -124,6 +126,5 @@ import {
         this.form.addEventListener("submit", this.handleEvent.bind(this));
       });
     }
-   
   }
   customElements.define(config.name(myskillTable.url), myskillTable);

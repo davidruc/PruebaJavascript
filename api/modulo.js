@@ -4,27 +4,26 @@ let headers = new Headers({
 let puerto = 4009;
 
 const postmodulo = async (arg) => {
-    arg.id = (arg.id) ? arg.id : Date.now();
     let config = {
         method: "POST",
         headers: headers,
         body: JSON.stringify(arg)
     };
-    return await (await fetch(`http://localhost:${puerto}/modulo`, config)).json();
+    return await (await fetch(`http://localhost:${puerto}/modulos`, config)).json();
 }
 const getmoduloAll = async () => {
     let config = {
         method: "GET",
         headers: headers
     };
-    return await (await fetch(`http://localhost:${puerto}/modulo`, config)).json();
+    return await (await fetch(`http://localhost:${puerto}/modulos`, config)).json();
 }
 const deltemodulo = async (arg) => {
     let config = {
         method: "DELETE",
         headers: headers,
     };
-    return await (await fetch(`http://localhost:${puerto}/modulo/${arg.id}`, config)).json();
+    return await (await fetch(`http://localhost:${puerto}/modulos/${arg.id}`, config)).json();
 }
 const putmodulo = async (arg) => {
     let config = {
@@ -32,10 +31,10 @@ const putmodulo = async (arg) => {
         headers: headers,
         body: JSON.stringify(arg)
     };
-    return await (await fetch(`http://localhost:${puerto}/modulo/${arg.id}`, config)).json();
+    return await (await fetch(`http://localhost:${puerto}/modulos/${arg.id}`, config)).json();
 }
 const searchmodulo = async (arg) => {
-    const response = await fetch(`http://localhost:${puerto}/modulo`);
+    const response = await fetch(`http://localhost:${puerto}/modulos`);
     const data = await response.json();
 
     if (response.ok) {
